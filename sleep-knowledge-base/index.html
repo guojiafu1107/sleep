@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡眠知识库 | Sleep Knowledge Base</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars" aria-hidden="true"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>睡眠知识库</h1>
+            <p class="subtitle">基于 50 篇核心文献构建的睡眠科学知识体系</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-num">50</span>
+                    <span class="stat-label">核心关键词</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">50</span>
+                    <span class="stat-label">研究文献</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">6</span>
+                    <span class="stat-label">研究领域</span>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索关键词、英文术语..." autocomplete="off">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('keywords').scrollIntoView({behavior:'smooth'})">
+            <span>探索关键词</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
+    </header>
+
+    <main>
+        <section id="keywords" class="keywords-section">
+            <div class="section-header">
+                <h2>核心关键词</h2>
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="tab active" data-category="all">全部</button>
+                    <button class="tab" data-category="mechanism">睡眠机制</button>
+                    <button class="tab" data-category="neuro">神经生物学</button>
+                    <button class="tab" data-category="cognitive">认知功能</button>
+                    <button class="tab" data-category="disease">疾病健康</button>
+                    <button class="tab" data-category="physiology">生理系统</button>
+                    <button class="tab" data-category="intervention">评估干预</button>
+                </div>
+            </div>
+            <div class="keywords-grid" id="keywordsGrid"></div>
+        </section>
+
+        <section id="literature" class="literature-section">
+            <div class="section-header">
+                <h2>文献库</h2>
+                <p>点击关键词卡片可查看相关文献详情与摘要</p>
+            </div>
+            <div class="literature-list" id="literatureList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p> 睡眠知识库 | 基于本地 50 篇睡眠科学文献构建</p>
+        <p class="footer-note">仅供学术研究与学习参考</p>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose" aria-label="关闭">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
