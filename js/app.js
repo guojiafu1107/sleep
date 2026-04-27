@@ -169,7 +169,7 @@ function openModal(k) {
   const refsHtml = k.refs.map(rid => {
     const lit = literature.find(l => l.id === rid);
     if (!lit) return '';
-    const pdfPath = '../' + encodeURIComponent(lit.name);
+    const pdfPath = './' + encodeURIComponent(lit.name);
     return `
       <a class="modal-lit-item" href="${pdfPath}" target="_blank" rel="noopener">
         <span class="modal-lit-num">${lit.id}</span>
@@ -206,7 +206,7 @@ function closeModal() {
 function renderLiterature() {
   literatureList.innerHTML = '';
   literature.forEach(lit => {
-    const pdfPath = '../' + encodeURIComponent(lit.name);
+    const pdfPath = './' + encodeURIComponent(lit.name);
     const item = document.createElement('div');
     item.className = 'literature-item';
     item.innerHTML = `
